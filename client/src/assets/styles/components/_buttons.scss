@@ -1,0 +1,22 @@
+.btn {
+    @extend .h-12;
+    @extend .px-8;
+    @extend .rounded;
+    @extend .cursor-pointer;
+
+    @extend .text-xs;
+    @extend .font-sans;
+    @extend .uppercase;
+    @extend .tracking-widest;
+
+    transition: 200ms;
+}
+
+.btn-primary {
+    @extend .text-white;
+    @extend .bg-gray-800;
+
+    &:hover {
+        @extend .bg-gray-600;
+    }
+}

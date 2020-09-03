@@ -1,0 +1,25 @@
+.input {
+
+    max-width: 600px;
+    transition: 200ms;
+
+    @extend .p-6;
+    @extend .my-20;
+    @extend .w-full;
+    @extend .rounded;
+    @extend .bg-white;
+
+    @extend .text-sm;
+    @extend .font-sans;
+    @extend .text-gray-800;
+}
+
+.input::placeholder {
+    @extend .text-sm;
+    @extend .font-sans;
+    @extend .text-gray-500;
+}
+
+.input:focus {
+    @extend .border-white;
+}

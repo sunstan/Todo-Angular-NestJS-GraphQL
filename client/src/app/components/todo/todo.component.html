@@ -1,0 +1,20 @@
+<div class="todo" (outside)="edition && (edition=false)" [class.done]="todo.doneAt">
+
+    <ng-container *ngIf="!edition">
+        <label class="flex-grow cursor-pointer flex items-center">
+            <input class="checkbox" type="checkbox" (change)="toggle()" [checked]="todo.doneAt">
+            <span></span>
+            <span>{{todo?.content}}</span>
+        </label>
+
+        <span class="material-icons todo--icon" (click)="edit()">edit</span>
+        <span class="material-icons todo--icon" (click)="onDelete()">delete</span>
+    </ng-container>
+
+    <ng-container *ngIf="edition">
+        <input class="bg-gray-100 flex-grow px-4 h-12 rounded-sm" #input [formControl]="control"
+               (keydown.enter)="control.valid && onSubmit()">
+    </ng-container>
+
+</div>
+

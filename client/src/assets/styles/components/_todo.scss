@@ -1,0 +1,52 @@
+.todo {
+    @extend .h-20;
+    @extend .px-6;
+    @extend .mb-4;
+    @extend .w-full;
+    @extend .rounded;
+    @extend .shadow-sm;
+
+    @extend .flex;
+    @extend .items-center;
+    @extend .justify-between;
+
+    @extend .text-sm;
+    @extend .bg-white;
+    @extend .text-gray-800;
+    @extend .leading-normal;
+
+    transition: 200ms;
+
+    .todo--icon {
+        @extend .ml-5;
+        @extend .opacity-0;
+        @extend .text-gray-300;
+        @extend .cursor-pointer;
+        transition: 200ms;
+    }
+
+    .todo--icon:hover {
+        @extend .text-gray-800;
+    }
+
+    &.done {
+        @extend .text-white;
+        @extend .bg-gray-800;
+
+        .todo--icon {
+            @extend .text-gray-500;
+        }
+
+        .todo--icon:hover {
+            @extend .text-white;
+        }
+    }
+
+    &:hover {
+        @extend .shadow-md;
+
+        .todo--icon {
+            @extend .opacity-100;
+        }
+    }
+}

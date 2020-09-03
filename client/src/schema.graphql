@@ -1,0 +1,49 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    createTodo(input: CreateTodoInput!): Todo!
+    deleteTodo(ID: Float!): Boolean!
+    doneTodo(ID: Float!): Todo!
+    undoneTodo(ID: Float!): Todo!
+    updateTodo(ID: Float!, input: UpdateTodoInput!): Todo!
+}
+
+type Query {
+    todos(input: TodosInput!): TodosOutput!
+}
+
+type Todo {
+    ID: Int!
+    content: String!
+    createdAt: DateTime!
+    doneAt: DateTime
+    updatedAt: DateTime!
+}
+
+type TodosOutput {
+    hasMore: Boolean!
+    items: [Todo!]!
+    total: Int!
+}
+
+input CreateTodoInput {
+    content: String!
+}
+
+input TodosInput {
+    skip: Int = 0
+    take: Int = 10
+}
+
+input UpdateTodoInput {
+    content: String
+}
+
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime
